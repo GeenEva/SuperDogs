@@ -3,13 +3,12 @@ package domain;
 import javax.persistence.*;
 
 @Entity
-@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class DogPapa {
 
 	protected long id;
 	protected String name;
 	protected int age;
-	
 	
 	
 	public DogPapa(String name, int age) {
@@ -19,7 +18,7 @@ public abstract class DogPapa {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	public long getId() {
 		return id;
 	}
@@ -40,6 +39,10 @@ public abstract class DogPapa {
 	public void setAge(int age) {
 		this.age = age;
 	}
+	
+
+
+
 	@Override
 	public String toString() {
 		return "DogPapa [id=" + id + ", name=" + name + ", age=" + age + "]";

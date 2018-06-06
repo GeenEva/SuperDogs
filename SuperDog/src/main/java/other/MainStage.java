@@ -12,10 +12,10 @@ public class MainStage {
 		
 		GenericDAO genDAO = new GenericDAO();
 		
-		DogPapa poodle = new Poodle("WOEFER", 78);
+		DogPapa poodle = new Poodle("WuFER", 66);
 		genDAO.createObject(poodle);
 		
-		DogPapa chi = new Chihuahua("Geranium", 48);
+		DogPapa chi = new Chihuahua("Pluto", 3, true);
 		genDAO.createObject(chi);
 		
 		genDAO.closeEntityManager();
