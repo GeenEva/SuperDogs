@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Inheritance
 public class Chihuahua extends DogPapa {
 
-
+//	public Chihuahua() {}
+	
 	public Chihuahua(String name, int age) {
 		super(name, age);
 	
