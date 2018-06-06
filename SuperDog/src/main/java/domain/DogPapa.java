@@ -2,12 +2,14 @@ package domain;
 
 import javax.persistence.*;
 
-@MappedSuperclass
-public class DogPapa {
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public abstract class DogPapa {
 
 	protected long id;
 	protected String name;
 	protected int age;
+	
 	
 	
 	public DogPapa(String name, int age) {
@@ -17,13 +19,15 @@ public class DogPapa {
 	
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	public long getId() {
 		return id;
 	}
+	
 	public void setId(long id) {
 		this.id = id;
 	}
+	
 	public String getName() {
 		return name;
 	}

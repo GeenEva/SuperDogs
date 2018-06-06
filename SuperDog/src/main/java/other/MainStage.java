@@ -4,6 +4,7 @@ import daoos.GenericDAO;
 import domain.Chihuahua;
 import domain.DogPapa;
 import domain.Poodle;
+import javax.persistence.*;
 
 public class MainStage {
 
@@ -11,10 +12,10 @@ public class MainStage {
 		
 		GenericDAO genDAO = new GenericDAO();
 		
-		Poodle poodle =	new Poodle("Neushoorn", 24);
+		DogPapa poodle = new Poodle("WOEFER", 78);
 		genDAO.createObject(poodle);
 		
-		DogPapa chi = new Chihuahua("Ger", 12);
+		DogPapa chi = new Chihuahua("Geranium", 48);
 		genDAO.createObject(chi);
 		
 		genDAO.closeEntityManager();

@@ -3,7 +3,7 @@ package domain;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "poodle")
+@Inheritance
 public class Poodle extends DogPapa {
 
 	public Poodle(String name, int age) {
