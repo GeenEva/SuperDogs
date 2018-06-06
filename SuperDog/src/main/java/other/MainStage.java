@@ -1,16 +1,20 @@
 package other;
 
 import daoos.GenericDAO;
-import domain.Chihuahua;
-import domain.DogPapa;
-import domain.Poodle;
+import domain.*;
 import javax.persistence.*;
 
 public class MainStage {
 
 	public static void main(String[] args) {
 		
-		GenericDAO genDAO = new GenericDAO();
+		Chihuahua chi = new Chihuahua("chichi", 21, true);
+		Chihuahua chi2 = new Chihuahua("chochi", 23, true);
+	
+		
+		System.out.println(chi.equals(chi2));
+		
+/*		GenericDAO genDAO = new GenericDAO();
 		
 		DogPapa poodle = new Poodle("WuFER", 66);
 		genDAO.createObject(poodle);
@@ -19,7 +23,7 @@ public class MainStage {
 		genDAO.createObject(chi);
 		
 		genDAO.closeEntityManager();
-		
+*/		
 	}
 
 }

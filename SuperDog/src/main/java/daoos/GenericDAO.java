@@ -82,8 +82,8 @@ public class GenericDAO<T> {
 			entityManager.remove(entity);
 			entityManager.getTransaction().commit();
 	
-		
 	}
+	
 	
 	public void closeEntityManager() {
 		entityManager.close();
