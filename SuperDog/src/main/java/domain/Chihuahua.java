@@ -9,7 +9,7 @@ public class Chihuahua extends DogPapa {
 	
 	private boolean agressive;
 
-//	public Chihuahua() {}
+	public Chihuahua() {}
 	
 	public Chihuahua(String name, int age, boolean agr) {
 		super(name, age);

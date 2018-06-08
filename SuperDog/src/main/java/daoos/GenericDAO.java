@@ -51,16 +51,12 @@ public class GenericDAO<T> {
 	}
 	
 	//Overloaded ReadObject method
-  	public T readObject(Class<?> type, long id) {
- 
-		entityManager.clear(); //empties the entitymanager from persistence context
-		entityManager.find(type, id);
-		
-			//	System.out.println((entityManager.find(type.getClass(), id)).toString());
-		
-		entityManagerFactory.close();
+	public T readObject(Class<?> type, long id) {
+		 
+		entityManager.clear();
+		T entity = (T) entityManager.find(type, id);
 			
-		return null;
+		return entity;
 	}
 
 	
@@ -70,21 +66,31 @@ public class GenericDAO<T> {
 		entityManager.merge(entity);
 		entityManager.getTransaction().commit();
 	
-		
 	}
 	
 	
 	public void deleteObject(long id) {
 			
 			entityManager.getTransaction().begin();
-			entityManager.clear();//empties the entitymanager from persistence context
+			entityManager.clear();
 			T entity = entityManager.find(clazz, id);
 			entityManager.remove(entity);
 			entityManager.getTransaction().commit();
 	
 	}
 	
+	public void deleteObject(Class<?> type, long id) {
+		
+		entityManager.getTransaction().begin();
+		entityManager.clear();
+		T entity = (T)entityManager.find(type, id);
+		entityManager.remove(entity);
+		
+		entityManager.getTransaction().commit();
+
+}
 	
+		
 	public void closeEntityManager() {
 		entityManager.close();
 	}

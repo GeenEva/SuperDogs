@@ -8,7 +8,7 @@ public class Poodle extends DogPapa {
 
 	
 	
-//	public Poodle() {}
+	public Poodle() {}
 	
 	public Poodle(String name, int age) {
 		super(name, age);
